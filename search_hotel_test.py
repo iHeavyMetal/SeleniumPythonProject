@@ -1,3 +1,4 @@
+import time
 
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -45,3 +46,17 @@ prices = driver.find_elements(By.XPATH, "//div[contains(@class,'price_tab')]//b"
 price_values = [price.get_attribute("textContent") for price in prices]
 for price in price_values:
     print("Hotel price: " + price)
+
+assert hotel_names[0] == "Jumeirah Beach Hotel"
+assert hotel_names[1] == "Oasis Beach Tower"
+assert hotel_names[2] == "Rose Rayhaan Rotana"
+assert hotel_names[3] == "Hyatt Regency Perth"
+
+assert price_values[0] == "$22"
+assert price_values[1] == "$50"
+assert price_values[2] == "$80"
+assert price_values[3] == "$150"
+
+
+#time.sleep(2)
+driver.quit()
