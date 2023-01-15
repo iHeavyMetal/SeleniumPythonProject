@@ -36,9 +36,12 @@ driver.find_element(By.ID, "childInput").clear()
 driver.find_element(By.ID, "childInput").send_keys("4")
 driver.find_element(By.XPATH, "//button[text()=' Search']").click()
 
-
-# //h4[contains(@class, 'list_title')]//b
 hotel_list = driver.find_elements(By.XPATH, "//h4[contains(@class,'list_title')]//b")
 hotel_names = [hotel.get_attribute("textContent") for hotel in hotel_list]
 for name in hotel_names:
-    print("Hotel name", name)
+    print("Hotel name: " + name)
+
+prices = driver.find_elements(By.XPATH, "//div[contains(@class,'price_tab')]//b")
+price_values = [price.get_attribute("textContent") for price in prices]
+for price in price_values:
+    print("Hotel price: " + price)
