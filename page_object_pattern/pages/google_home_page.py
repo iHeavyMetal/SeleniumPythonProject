@@ -1,3 +1,6 @@
+from selenium.webdriver.common.by import By
+
+
 class GoogleHomePage:
     def __init__(self, driver):
         self.driver = driver
@@ -5,5 +8,5 @@ class GoogleHomePage:
         self.search_button_name = 'btnK'
 
     def search_in_google(self, text):
-        self.driver.find_element_by_name(self.search_input_name).send_keys(text)
-        self.driver.find_element_by_name(self.search_button_name).click()
+        self.driver.find_element(By.NAME, self.search_input_name).send_keys(text)
+        self.driver.find_element(By.NAME, self.search_button_name).click()
