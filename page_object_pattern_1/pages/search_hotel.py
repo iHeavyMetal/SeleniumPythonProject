@@ -1,10 +1,11 @@
 from selenium.webdriver.common.by import By
-
+from page_object_pattern_1.locators.locators import SearchHotelsLocators #locators in one file
 
 class SearchHotelPage:
     def __init__(self, driver):
         self.driver = driver
         self.search_hotel_span_xpath = "//span[text()='Search by Hotel or City Name']"
+        #self.search_hotel_span_xpath = SearchHotelsLocators.search_hotel_span_xpath #locators in one file/ do it for all lines
         self.search_hotel_input_xpath = "//div[@id='select2-drop']//input"
         self.location_match_xpath = "//span[text()='Dubai']"
         self.checkin_input_name = "checkin"
