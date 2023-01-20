@@ -1,4 +1,5 @@
 import pytest
+
 from page_object_pattern_1.pages.search_hotel import SearchHotelPage
 from page_object_pattern_1.pages.search_results import SearchResultsPage
 import allure
