@@ -1,9 +1,9 @@
-import py
 import pytest
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from page_object_pattern_1.pages.search_hotel import SearchHotelPage
 from page_object_pattern_1.pages.search_results import SearchResultsPage
+import allure
 
 class TestHotelSearch:
 
@@ -14,7 +14,8 @@ class TestHotelSearch:
         self.driver.maximize_window()
         yield
         self.driver.quit()
-
+    @allure.title("Tis is title")
+    @allure.description("Test description")
     def test_hotel_search(self, setup):
         self.driver.get("http://www.kurs-selenium.pl/demo/")
         search_hotel_page = SearchHotelPage(self.driver)
